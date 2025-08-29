@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Muslim Support (NMS)</title>
+  <meta name="description" content="New Muslim Support (NMS) — Guiding New Muslims, spreading the light of Islam. Support, guidance, and resources for non‑Muslims and new Muslims." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#198754; /* primary */
+      --gold:#FFD700;  /* accent */
+      --beige:#f7f3ea; /* background tint */
+      --ink:#1a1a1a;  /* text */
+      --muted:#6b7280;/* muted text */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    h1,h2,h3,h4{font-family:Amiri,serif;line-height:1.2;margin:0 0 .5rem}
+    h1{font-size:clamp(2rem,4vw,3rem)}
+    h2{font-size:clamp(1.5rem,3vw,2.25rem)}
+    h3{font-size:clamp(1.2rem,2.5vw,1.5rem)}
+    p{margin:.25rem 0 1rem}
+    a{color:var(--green);text-decoration:none}
+    img{max-width:100%;display:block;border-radius:var(--radius)}
+    .container{max-width:1100px;margin-inline:auto;padding:0 1rem}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 180deg at 50% 50%, #e9f7ef, #d6f0e2, #e9f7ef);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo svg{width:24px;height:24px}
+    .brand-name{font-weight:800;letter-spacing:.3px}
+    .menu{display:flex;gap:1rem;align-items:center}
+    .menu a{padding:.5rem .75rem;border-radius:10px}
+    .menu a:hover{background:#f5f5f5}
+    .cta{background:var(--green);color:#fff;padding:.55rem .9rem;border-radius:12px;font-weight:700}
+    .cta:hover{filter:brightness(.95)}
+    .lang{color:var(--muted);font-size:.9rem}
+    /* Mobile nav */
+    .burger{display:none;flex-direction:column;gap:4px}
+    .burger span{width:26px;height:2px;background:#111}
+    @media (max-width:850px){
+      .menu{display:none;position:absolute;inset:60px 1rem auto 1rem;flex-direction:column;background:#fff;padding:1rem;border:1px solid #eee;border-radius:14px;box-shadow:var(--shadow)}
+      .menu.open{display:flex}
+      .burger{display:flex}
+    }
+    /* Hero */
+    .hero{background:radial-gradient(1200px 600px at 90% -10%, #e9f7ef 10%, transparent),
+           radial-gradient(800px 400px at -10% 0, #fffbe6 10%, transparent),
+           linear-gradient(180deg, #fff, var(--beige));
+          }
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:3rem 0}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.25rem .6rem;border:1px solid #e2e8f0;border-radius:999px;font-size:.85rem;background:#fff}
+    .badge i{width:8px;height:8px;background:var(--green);border-radius:50%}
+    .lead{font-size:1.1rem;color:#374151}
+    .actions{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.8rem 1rem;border-radius:12px;font-weight:700}
+    .btn-primary{background:var(--green);color:#fff}
+    .btn-outline{border:1px solid var(--green);color:var(--green)}
+    .hero-visual{position:relative}
+    .hero-visual::after{content:"";position:absolute;inset:auto -10% -10% -10%;height:40%;background:radial-gradient(50% 60% at 50% 50%, rgba(25,135,84,.15), transparent);filter:blur(20px)}
+    .caption{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+    /* Sections */
+    section{padding:3rem 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .card{background:#fff;border:1px solid #eee;border-radius:16px;padding:1rem;box-shadow:var(--shadow)}
+    .pill{display:inline-block;font-size:.8rem;background:#ecfdf5;color:#065f46;padding:.25rem .5rem;border-radius:999px}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+    /* Footer */
+    footer{background:#0f172a;color:#e5e7eb;padding:2rem 0;margin-top:2rem}
+    footer a{color:#e5e7eb;text-decoration:underline}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .small{font-size:.9rem}
+    /* Utility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- Simple kufic-like NMS monogram -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6h6v12H4zM14 6h6v12h-6zM10 10h4v8h-4z" fill="var(--green)"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">New Muslim Support</div>
+          <div class="small muted">NMS • Since <span id="since">2025</span></div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <button class="burger" aria-controls="mobile-menu" aria-expanded="false" id="burgerBtn"><span></span><span></span><span></span><span class="sr-only">Menu</span></button>
+        <div class="menu" id="mobile-menu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#resources">Resources</a>
+          <a href="#donate" class="cta">Donate</a>
+          <a href="#contact">Contact</a>
+          <span class="lang" aria-label="Language switch">EN | বাংলা | عربي</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge"><i></i> Guiding New Muslims</span>
+        <h1>Guiding New Muslims, Spreading the Light of Islam</h1>
+        <p class="lead">We provide support, guidance, and resources for non‑Muslims interested in Islam and new Muslims beginning their journey of faith.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#donate">Donate Now</a>
+          <a class="btn btn-outline" href="#programs">Explore Programs</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Replace with your own image: /images/hero.jpg -->
+        <img src="https://images.unsplash.com/photo-1542178243-bc20204b769f?q=80&w=1600&auto=format&fit=crop" alt="New Muslim reading Quran with calm background" />
+        <div class="caption">Image placeholder — replace with your own photography.</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Mission / Snapshot -->
+  <section aria-labelledby="mission">
+    <div class="container">
+      <h2 id="mission">Our Mission</h2>
+      <p>To spread the message of Islam with wisdom and compassion, and to provide every new Muslim with the support, education, and community they need to thrive.</p>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <span class="pill">Learn Islam</span>
+          <h3>Authentic Knowledge</h3>
+          <p>Helping non‑Muslims discover the beauty of Islam through authentic knowledge from the Qur’an and Sunnah.</p>
+        </div>
+        <div class="card">
+          <span class="pill">New Muslim Support</span>
+          <h3>Mentorship & Guidance</h3>
+          <p>One‑on‑one mentorship, online classes, and supportive communities for those who have embraced Islam.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Community Assistance</span>
+          <h3>Charity & Care</h3>
+          <p>Financial aid, job support, and emergency assistance for new Muslims facing challenges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" aria-labelledby="about-title" style="background:var(--beige)">
+    <div class="container">
+      <h2 id="about-title">About Us</h2>
+      <p><strong>New Muslim Support (NMS)</strong> is a non‑profit organization dedicated to spreading the truth about Islam to non‑Muslims and helping new Muslims feel supported and guided on their journey of faith.</p>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <h3>Vision</h3>
+          <p>A world where every person who embraces Islam feels loved, supported, and empowered to live their faith confidently.</p>
+        </div>
+        <div class="card">
+          <h3>Mission</h3>
+          <p>Provide authentic Islamic knowledge to non‑Muslims and comprehensive support to new Muslims, including mentorship, resources, and community programs.</p>
+        </div>
+        <div class="card">
+          <h3>Values</h3>
+          <ul>
+            <li><strong>Authenticity:</strong> Qur’an & Sunnah.</li>
+            <li><strong>Compassion:</strong> Care like family.</li>
+            <li><strong>Community:</strong> Safe spaces to grow.</li>
+            <li><strong>Dawah:</strong> Invite with wisdom.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs" aria-labelledby="programs-title">
+    <div class="container">
+      <h2 id="programs-title">Our Programs</h2>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1600&auto=format&fit=crop" alt="Friendly Q&A about Islam" />
+          <h3>Dawah for Non‑Muslims</h3>
+          <p>Online sessions, free books, and respectful Q&A to learn about Islam clearly.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop" alt="Mentorship conversation" />
+          <h3>New Muslim Mentorship</h3>
+          <p>One‑on‑one mentors, classes, and support groups so no one walks alone.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1520975954732-35dd222996f2?q=80&w=1600&auto=format&fit=crop" alt="Charity and community help" />
+          <h3>Community & Charity Support</h3>
+          <p>Financial help, job guidance, and emergency assistance after embracing Islam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section id="resources" aria-labelledby="resources-title" style="background:var(--beige)">
+    <div class="container">
+      <h2 id="resources-title">Resources</h2>
+      <p>Free materials for learning and practicing Islam.</p>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <h3>Books (PDF)</h3>
+          <ul>
+            <li><a href="#">Beginner’s Guide to Islam</a></li>
+            <li><a href="#">Understanding the Qur’an</a></li>
+            <li><a href="#">Life of the Prophet ﷺ</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Guides</h3>
+          <ul>
+            <li><a href="#">How to Pray (Salah)</a></li>
+            <li><a href="#">How to Perform Wudu</a></li>
+            <li><a href="#">Halal Food Basics</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Videos</h3>
+          <ul>
+            <li><a href="#">How to Pray — Step by Step</a></li>
+            <li><a href="#">What is the Qur’an?</a></li>
+            <li><a href="#">Introduction to Islam</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted small">Replace the # links with your actual PDF and video URLs.</p>
+    </div>
+  </section>
+
+  <!-- Donate -->
+  <section id="donate" aria-labelledby="donate-title">
+    <div class="container">
+      <h2 id="donate-title">Support the Mission</h2>
+      <p>Your donation helps guide souls to Islam and support new Muslims in their faith journey. Every contribution makes a difference.</p>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <h3>One‑Time Donation</h3>
+          <p>Give what you can, when you can.</p>
+          <a class="btn btn-primary" href="#">Donate Once</a>
+        </div>
+        <div class="card">
+          <h3>Monthly Contribution</h3>
+          <p>Become a sustaining supporter of NMS.</p>
+          <a class="btn btn-primary" href="#">Give Monthly</a>
+        </div>
+        <div class="card">
+          <h3>Sponsor a New Muslim</h3>
+          <p>$100 supports a new Muslim for one month.</p>
+          <a class="btn btn-primary" href="#">Sponsor Now</a>
+        </div>
+      </div>
+      <div class="card" style="margin-top:1rem">
+        <h3>Impact of Your Gift</h3>
+        <ul>
+          <li>$10 provides Islamic literature for one person.</li>
+          <li>$50 helps a new Muslim attend online classes.</li>
+          <li>$100 supports a struggling new Muslim for one month.</li>
+        </ul>
+        <p class="muted small">Connect real payment methods later (PayPal, Stripe, Mobile Banking). These buttons can link to your payment pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" aria-labelledby="blog-title" style="background:var(--beige)">
+    <div class="container">
+      <h2 id="blog-title">Blog</h2>
+      <p>Inspiring stories, practical tips, and authentic knowledge.</p>
+      <div class="grid-3" style="margin-top:1rem">
+        <article class="card">
+          <h3>New Muslim Stories</h3>
+          <p>Real journeys from people who embraced Islam.</p>
+          <a href="#">Read Stories →</a>
+        </article>
+        <article class="card">
+          <h3>Dawah Tips</h3>
+          <p>Invite with wisdom and kindness.</p>
+          <a href="#">Read Tips →</a>
+        </article>
+        <article class="card">
+          <h3>Islamic Lifestyle</h3>
+          <p>Live your faith with confidence.</p>
+          <a href="#">Explore Guides →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title">Get in Touch</h2>
+      <p>We’d love to hear from you! Whether you have questions about Islam, need guidance as a new Muslim, or want to partner with us, reach out today.</p>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <h3>Contact Details</h3>
+          <p><strong>Email:</strong> <a href="mailto:support@nms.org">support@nms.org</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/880000000000">+880XXXXXXXX</a></p>
+          <p><strong>Address:</strong> Your Office Address</p>
+        </div>
+        <form class="card" action="https://formspree.io/f/your-id" method="POST">
+          <h3>Contact Form</h3>
+          <label>Name<br><input required name="name" type="text" placeholder="Your name" style="width:100%;padding:.7rem;border:1px solid #e5e7eb;border-radius:10px"/></label><br>
+          <label>Email<br><input required name="email" type="email" placeholder="name@example.com" style="width:100%;padding:.7rem;border:1px solid #e5e7eb;border-radius:10px"/></label><br>
+          <label>Message<br><textarea required name="message" rows="4" placeholder="How can we help?" style="width:100%;padding:.7rem;border:1px solid #e5e7eb;border-radius:10px"></textarea></label><br>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="muted small">Replace the action URL with your own Formspree/Email handler.</p>
+        </form>
+        <div class="card">
+          <h3>Support Channels</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+          <p class="muted small">Connect these to your real social pages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin:0 0 .25rem">New Muslim Support (NMS)</h3>
+        <p class="small">Spreading Islam and helping new Muslims since <span id="year">2025</span>.</p>
+        <p class="small">© <span id="copyYear"></span> NMS. All rights reserved.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Newsletter</h3>
+        <form action="#" onsubmit="event.preventDefault();alert('Subscribed! (Connect to Mailchimp/Brevo)')">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" required placeholder="Your email" style="width:100%;padding:.7rem;border:1px solid #334155;border-radius:10px;background:#0b1224;color:#e5e7eb;margin-bottom:.5rem"/>
+          <button class="btn" style="background:var(--gold);color:#111;width:100%">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const burger = document.getElementById('burgerBtn');
+    const menu = document.getElementById('mobile-menu');
+    burger?.addEventListener('click', ()=>{
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Footer years
+    document.getElementById('copyYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
